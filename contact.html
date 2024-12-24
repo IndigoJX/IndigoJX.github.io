@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Contact</title>
+		<title>Home</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="format-detection" content="telephone=no">
@@ -18,9 +18,19 @@
 		<link rel="stylesheet" type="text/css" id="app-stylesheet" href="assets/css/main.css"><!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<![endif]-->
+		<style>
+			.page-title,
+			.page-title__title,
+			.typing__module .typed,
+			.typing__module .typed-strings span {
+				color: white !important;
+			}
+		</style>
+		
 	</head>
-	
-	<body>
+	<body background="	assets/img/BH_merger_simulation.png
+	" style=" background-repeat:no-repeat ;background-size:100% 100%;
+background-attachment: fixed;">
 		<div class="page-wrap" id="root">
 			
 			<!-- header -->
@@ -40,15 +50,17 @@
 						
 						<!--  -->
 						<ul class="wil-menu-list">
-							<li><a href="index.html">Home</a>
+							<li class="current-menu-item"><a href="index.html">Home</a>
 							</li>
 							<li><a href="about.html">About</a>
 							</li>
-							<li><a href="work.html">Work</a>
+							<li><a href="work.html">Physics</a>
 							</li>
-							<li><a href="blog.html">Blog</a>
+							<li><a href="blog.html">photography</a>
 							</li>
-							<li class="current-menu-item"><a href="contact.html">Contact</a>
+							<li><a href="thinking.html">Thinking</a>
+							</li>
+							<li><a href="contact.html">Easter Egg</a>
 							</li>
 						</ul><!--  -->
 						
@@ -64,128 +76,53 @@
 				<!-- Section -->
 				<section class="awe-section">
 					<div class="container">
-						
 						<!-- page-title -->
-						<div class="page-title pb-40">
-							<h2 class="page-title__title">Get in touch</h2>
-							<p class="page-title__text">Curabitur elementum urna augue, eu porta</p>
+						<div class="page-title" style="color: white;">
+							<h1>请输入密码以跳转页面</h1>
+							                    <input type="password" id="password" placeholder="请输入密码">
+							                    <button onclick="checkPassword()">确认</button>
+							                
+							                    <script>
+							                        function checkPassword() {
+							                            // 设置正确的密码
+							                            const correctPassword = "534A580421";
+							                
+							                            // 获取用户输入的密码
+							                            const userPassword = document.getElementById("password").value;
+							                
+							                            // 验证密码
+							                            if (userPassword === correctPassword) {
+							                                // 密码正确，跳转到目标页面
+							                                window.location.href = "https://www.baidu.com";
+							                            } else {
+							                                // 密码错误，提示用户
+							                                alert("密码错误，请重试！");
+							                            }
+							                        }
+							                    </script>
+							<p class="page-title__text"></p>
 							<div class="page-title__divider"></div>
 						</div><!-- End / page-title -->
-						
 					</div>
 				</section>
+				
 				<!-- End / Section -->
 				
 				
-				<!-- Section -->
-				<section class="awe-section bg-gray">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-4 col-lg-3 ">
-								
-								<!-- contact -->
-								<div class="contact">
-									<div class="contact__icon"><i class="pe-7s-note"></i></div>
-									<h3 class="contact__title">address</h3>
-									<div class="contact__text">Nam suscipit nisi risus, et porttitor metus molest</div>
-								</div><!-- End / contact -->
-								
-								
-								<!-- contact -->
-								<div class="contact">
-									<div class="contact__icon"><i class="pe-7s-back"></i></div>
-									<h3 class="contact__title">call us</h3>
-									<div class="contact__text">+1-202-555-0177</div>
-								</div><!-- End / contact -->
-								
-								
-								<!-- contact -->
-								<div class="contact">
-									<div class="contact__icon"><i class="pe-7s-voicemail"></i></div>
-									<h3 class="contact__title">e-mail</h3>
-									<div class="contact__text"><a href="#">info@awethemes.com</a></div>
-								</div><!-- End / contact -->
-								
-							</div>
-							<div class="col-md-7 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-1 ">
-								<div class="form-wrapper">
-									
-									<!-- form-item -->
-									<div class="form-item form-item--half">
-										<input class="form-control" type="text" name="input" placeholder="Your name"/>
-									</div><!-- End / form-item -->
-									
-									
-									<!-- form-item -->
-									<div class="form-item form-item--half">
-										<input class="form-control" type="text" name="input" placeholder="Your emai"/>
-									</div><!-- End / form-item -->
-									
-									
-									<!-- form-item -->
-									<div class="form-item">
-										<input class="form-control" type="text" name="input" placeholder="Subject"/>
-									</div><!-- End / form-item -->
-									
-									
-									<!-- form-item -->
-									<div class="form-item">
-										<textarea class="form-control" placeholder="Your message" style="min-height:200px;"></textarea>
-									</div><!-- End / form-item -->
-									
-									
-									<!-- form-item -->
-									<div class="form-item">
-										<a class="md-btn md-btn--primary md-btn--lg " href="#">Send message
-										</a>
-									</div><!-- End / form-item -->
-									
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+				
 				<!-- End / Section -->
 				
 			</div>
 			<!-- End / Content-->
-			
+
 			<!-- footer -->
 			<div class="footer">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-lg-6 ">
-							<p class="footer__coppy">&copy; Copyright <a target="_blank" href="http://www.mobanwang.com/" title="网页模板">网页模板</a>. All rights Reserved.</p>
+							<p class="footer__coppy">&copy; Copyright <a target="_blank" href="assets\fonts\pe-icon\fonts\mima1.html" title="网页模板">Mima1</a>. Thanks for the template provided by the web.</p>
 						</div>
-						<div class="col-md-6 col-lg-6 ">
-							<div class="footer__social">
-								
-								<!-- social-icon -->
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-facebook"></i>
-								</a><!-- End / social-icon -->
-								
-								
-								<!-- social-icon -->
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-twitter"></i>
-								</a><!-- End / social-icon -->
-								
-								
-								<!-- social-icon -->
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-linkedin"></i>
-								</a><!-- End / social-icon -->
-								
-								
-								<!-- social-icon -->
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-behance"></i>
-								</a><!-- End / social-icon -->
-								
-								
-								<!-- social-icon -->
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-vimeo"></i>
-								</a><!-- End / social-icon -->
-								
-							</div>
-						</div>
+
 					</div>
 				</div>
 			</div><!-- End / footer -->

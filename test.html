@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码验证跳转</title>
+</head>
+<body>
+    <h1>请输入密码以跳转页面</h1>
+    <input type="password" id="password" placeholder="请输入密码">
+    <button onclick="checkPassword()">确认</button>
+
+    <script>
+        function checkPassword() {
+            // 设置正确的密码
+            const correctPassword = "12345";
+
+            // 获取用户输入的密码
+            const userPassword = document.getElementById("password").value;
+
+            // 验证密码
+            if (userPassword === correctPassword) {
+                // 密码正确，跳转到目标页面
+                window.location.href = "https://example.com";
+            } else {
+                // 密码错误，提示用户
+                alert("密码错误，请重试！");
+            }
+        }
+    </script>
+</body>
+</html>
