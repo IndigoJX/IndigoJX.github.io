@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>氢原子可视化图像</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1>氢原子电子云</h1>
+    <div>
+        <input id="data" type="text" placeholder="请输入图像序号"/>
+        <button id="btn" >click me</button>
+    </div>
+    <div class = "box"></div>
+	<p style="font-family:Times New Roman;">
+		
+		&emsp;&emsp;请在窗口中输入对应的量子数，例如，若期望得到氢原子第一激发态的图片，则输入“210”并点击“click me”即可，其中2对应主量子数𝑛，1对应角量子数𝑙，0对应磁量子数𝑚。
+		注意，𝑛,𝑚,𝑙之间关系为𝑛 = 1,2,3, ⋯ ; 𝑙 = 0,1, ⋯ , 𝑛 − 1; 𝑚 = ±1, ±2, ⋯ , ±𝑙，若不按照量子力学规则输入，将不会显示图片。目前仅绘制到第三激发态。
+		</p>
+
+	<script src="script_hydron.js"></script>
+</body>
+</html>

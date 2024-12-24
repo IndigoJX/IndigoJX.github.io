@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>微扰体系可视化图像(自旋轨道耦合)</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1>精细结构电子云</h1>
+    <div>
+        <input id="data" type="text" placeholder="请输入图像序号"/>
+        <button id="btn" >click me</button>
+    </div>
+    <div class = "box"></div>
+	<p style="font-family:Times New Roman;">
+		&emsp;&emsp;请在窗口中输入对应的量子数，例如，输入“32-0.5+”并点击“click me”即可，其中3对应主量子数𝑛，2对应角量子数𝑙，-0.5对应总量子数j，+或-体现考虑自旋向上或向下。
+		注意，𝑛,𝑚,𝑙之间关系为𝑛 = 1,2,3, ⋯ ; 𝑙 = 0,1, ⋯ , 𝑛 − 1; 𝑚 = ±1, ±2, ⋯ , ±𝑙；s = ±1/2.若不按照量子力学规则输入，将不会显示图片。
+		</p>
+
+	<script src="script_pertubation.js"></script>
+</body>
+</html>
