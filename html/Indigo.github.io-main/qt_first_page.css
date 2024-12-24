@@ -1,0 +1,20 @@
+body{
+	background-color: white;
+	text-align:center ;
+	max-width: 800px;
+	position: relative;
+	margin: 5% auto;
+}
+h1  {
+		color: DodgerBlue;
+}
+h2  {
+	color: DodgerBlue;
+}
+
+
+nav{
+	font-size: 24px;
+	font-weight: 550px;
+	border-color: deepskyblue;
+}

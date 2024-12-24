@@ -1,0 +1,28 @@
+<!--shijunxi.html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>谐振子概率云图像</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1>直角坐标及球坐标下谐振子概率云</h1>
+    <div>
+        <input id="data" type="text" placeholder="请输入图像序号"/>
+        <button id="btn" >click me</button>
+    </div>
+    <div class = "box"></div>
+<p style="font-family:Times New Roman;">
+		
+		&emsp;&emsp;请在窗口中输入对应的量子数，例如，若期望得到球坐标下谐振子基态概率云的图片，则输入“000”并点击“click me”即可，
+		其中第一个0对应径量子数𝑛𝑟，第二个0对应角量子数𝑙，第三个0对应磁量子数𝑚。
+		注意，在谐振子体系中需要考虑其能级N，其中𝑁 = 0, 1, 2,⋯，并且有关系式𝑁 = 2𝑛𝑟 + 𝑙；
+		𝑚 = ±1,±2,⋯, ±𝑙.不同于氢原子情况时主量子数 n 和角量子数 𝑙 的关系，此时可以出现 𝑙 大于𝑛𝑟的情况.
+		但同样当 𝑁 给定时，若𝑛𝑟亦给定，则 𝑙 也被唯一确定。
+		另外，若希望得到按照直角坐标分解得到的谐振子波函数，只需在量子数前输入c(cartesian)即可，例如：c222。
+		若不按照量子力学规则输入，将不会显示图片。
+		</p>
+	<script src="script_xzz.js"></script>
+</body>
+</html>
