@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>QQNM工作笔记</title>
+  <style>
+    /* 通用样式重置 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    /* 导航栏样式 */
+    header {
+      background-color: #333;
+      padding: 1em;
+      text-align: center;
+    }
+    header h1 {
+      color: #fff;
+      margin-bottom: 0.5em;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1em;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffdf00;
+    }
+
+    /* 容器（每个section的笔记区域） */
+    .note-container {
+      max-width: 900px;
+      margin: 2em auto;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 1em;
+    }
+
+    /* 标题 */
+    .note-title {
+      font-size: 1.3em;
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+
+    /* 康奈尔笔记主要区域: 左侧提示区 + 右侧笔记区 */
+    .cornell-notes {
+      display: flex;
+      flex-wrap: wrap; /* 在小屏幕时可自动换行 */
+      gap: 1em;
+      margin-bottom: 1em;
+    }
+    /* 左侧提示区 */
+    .cue-column {
+      flex: 0 0 20%;
+      min-width: 150px;
+      border-right: 1px solid #ccc;
+      padding-right: 0.5em;
+    }
+    /* 右侧笔记区 */
+    .note-column {
+      flex: 1;
+      padding-left: 0.5em;
+    }
+    /* 底部总结区 */
+    .summary {
+      border-top: 1px solid #ccc;
+      padding-top: 1em;
+      margin-top: 1em;
+    }
+
+    /* 字体大小辅助类 */
+    .font-small {
+      font-size: 0.8em;
+    }
+    .font-medium {
+      font-size: 1em; /* 默认值 */
+    }
+    .font-large {
+      font-size: 1.2em;
+    }
+
+    /* 图片示例的基础样式 */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0.5em 0;
+    }
+
+    /* 模拟笔记的下划线输入（可选） */
+    .cornell-notes textarea,
+    .cornell-notes input[type='text'] {
+      width: 100%;
+      border: none;
+      border-bottom: 1px dashed #ccc;
+      padding: 0.3em 0;
+      margin-bottom: 0.5em;
+      background: transparent;
+      resize: vertical; 
+    }
+    .cornell-notes textarea:focus,
+    .cornell-notes input[type='text']:focus {
+      outline: none;
+      border-bottom-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部导航，可自由添加更多链接 -->
+  <header>
+    <h1>QQNM工作笔记</h1>
+    <nav>
+      <a href="#section1">第一节</a>
+      <a href="#section2">第二节</a>
+      <a href="#section3">第三节</a>
+      <a href="#section4">第四节</a>
+    </nav>
+  </header>
+
+  <!-- Section 1 -->
+  <section id="section1" class="note-container">
+    <h2 class="note-title">整体规划</h2>
+    <p class="font-small" style="text-align:center;">
+      <strong>主题：</strong><input type="text" placeholder="工作安排及整体规划" />
+      <strong>日期：</strong><input type="text" placeholder="24/12/27" />
+    </p>
+
+    <div class="cornell-notes font-medium">
+      <!-- 左侧提示区 -->
+      <div class="cue-column">
+        <h3>提示区</h3>
+        <textarea rows="10" placeholder="写下关键词、问题、提纲..."></textarea>
+      </div>
+      <!-- 右侧笔记区 -->
+      <div class="note-column">
+        <h3>笔记区</h3>
+        <textarea rows="10" placeholder="   *这周开始了QQNM拟合的工作，马上出现了大量问题。首先在此处还是把感觉需要捋清楚的内容具体呈现一下。
+    *首先，recall要做的事情。
+        1.fundamental modes, overtones, high order angular modes对不同自旋不同起始时间的贡献不清楚，因此想分析各自的贡献区域；
+        2.这涉及几个iterm，1）对sxs catalog的理解，数据结构，单位制，使用方法；2）拟合手段及如何使用，varpro，jax；
+        3）QNM frequency的计算，考虑采取python qnm这个包，但同样存在单位制的需要弄清楚的东西
+    *这个笔记主要用于记录遇到过的问题及解决方案，和一些工作过程中的要点
+        "></textarea>
+        <!-- 插入图片示例 -->
+        <p>（可以在此处插入图片）</p>
+        <img src="https://via.placeholder.com/400x200" alt="示例图片" />
+      </div>
+    </div>
+    <!-- 总结区 -->
+    <div class="summary font-small">
+      <h3>总结 / Summary</h3>
+      <textarea rows="5" placeholder="总结本节笔记..."></textarea>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="section2" class="note-container">
+    <h2 class="note-title">第二节：案例分析</h2>
+    <p class="font-small" style="text-align:center;">
+      <strong>主题：</strong><input type="text" placeholder="SXS_Catalog" />
+      <strong>日期：</strong><input type="text" placeholder="日期/时间" />
+    </p>
+
+    <div class="cornell-notes font-medium">
+      <!-- 左侧提示区 -->
+      <div class="cue-column">
+        <h3>提示区</h3>
+        <textarea rows="10" placeholder="记录关键线索、关键提问..."></textarea>
+      </div>
+      <!-- 右侧笔记区 -->
+      <div class="note-column">
+        <h3>笔记区</h3>
+        <textarea rows="10" placeholder="记录案例具体细节、分析思路..."></textarea>
+      </div>
+    </div>
+    <!-- 总结区 -->
+    <div class="summary font-small">
+      <h3>总结 / Summary</h3>
+      <textarea rows="5" placeholder="总结本节内容..."></textarea>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="section3" class="note-container">
+    <h2 class="note-title">第三节：实践与作业</h2>
+    <p class="font-small" style="text-align:center;">
+      <strong>主题：</strong><input type="text" placeholder="请输入本节主题" />
+      <strong>日期：</strong><input type="text" placeholder="日期/时间" />
+    </p>
+
+    <div class="cornell-notes font-medium">
+      <!-- 左侧提示区 -->
+      <div class="cue-column">
+        <h3>提示区</h3>
+        <textarea rows="10" placeholder="列出作业要求、实验要点..."></textarea>
+      </div>
+      <!-- 右侧笔记区 -->
+      <div class="note-column">
+        <h3>笔记区</h3>
+        <textarea rows="10" placeholder="写下实验过程、步骤记录或作业思路..."></textarea>
+      </div>
+    </div>
+    <!-- 总结区 -->
+    <div class="summary font-small">
+      <h3>总结 / Summary</h3>
+      <textarea rows="5" placeholder="本节实践或作业的最终结论..."></textarea>
+    </div>
+  </section>
+
+  <section id="section3" class="note-container">
+    <h2 class="note-title">第四节：实践与作业</h2>
+    <p class="font-small" style="text-align:center;">
+      <strong>主题：</strong><input type="text" placeholder="qnm包" />
+      <strong>日期：</strong><input type="text" placeholder="日期/时间" />
+    </p>
+
+    <div class="cornell-notes font-medium">
+      <!-- 左侧提示区 -->
+      <div class="cue-column">
+        <h3>提示区</h3>
+        <textarea rows="10" placeholder="之前在使用解析的QNM Frequency计算时，频率是包含质量，而qnm中只有自旋一个参数，称之质量进行了归一化。"></textarea>
+      </div>
+      <!-- 右侧笔记区 -->
+      <div class="note-column">
+        <h3>笔记区</h3>
+        <textarea rows="10" placeholder="写下实验过程、步骤记录或作业思路..."></textarea>
+      </div>
+    </div>
+    <!-- 总结区 -->
+    <div class="summary font-small">
+      <h3>总结 / Summary</h3>
+      <textarea rows="5" placeholder="本节实践或作业的最终结论..."></textarea>
+    </div>
+  </section>
+
+  <!-- 也可以在这里加一个页脚或其他说明 -->
+  <footer style="text-align:center; padding: 1em; color: #666;">
+    <p>© 2024 My Notes. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
