@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Physics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 全局重置 */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* body {
+      font-family: sans-serif;
+      color: #333;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    } */
+
+
+
+    /* 顶部固定头部 */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1em;
+      background: white;
+      z-index: 10;
+    }
+    header .logo {
+      font-size: 0.8em;
+      font-weight: bold;
+    }
+    /* 三杠菜单按钮 */
+    .menu-btn {
+      width: 30px; height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .menu-btn .bar {
+      height: 4px;
+      background: #333;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    /* 覆盖全屏的导航层 */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .overlay.active {
+      transform: translateX(0);
+    }
+    .overlay nav ul {
+      list-style: none;
+      text-align: center;
+    }
+    .overlay nav ul li {
+      margin: 1em 0;
+    }
+    .overlay nav ul li a {
+      color: #fff;
+      font-size: 2em;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .overlay nav ul li a:hover {
+      color: #f0a;
+    }
+    /* 主内容容器，留出头部空间 */
+    .container {
+      padding: 80px 1em 2em;
+      max-width: 800px;
+      margin: 0 auto;
+      background: transparent;
+    }
+    h1 { font-size: 3em; text-align: center; margin-bottom: 0.5em; }
+    h2 {
+      font-size: 2em;
+      margin-top: 1.5em; margin-bottom: 0.5em;
+      border-bottom: 2px solid #fff; padding-bottom: 0.2em;
+    }
+    ul { list-style: none; }
+    li.item {
+      display: flex; align-items: center;
+      margin-bottom: 1em;
+    }
+    li.item img {
+      width: 80px; height: 80px;
+      object-fit: cover;
+      margin-right: 1em;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    .desc a {
+      font-weight: bold; color: #2b82da;
+      text-decoration: none;
+    }
+    .desc a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body     background="	https://www.ligo.caltech.edu/system/avm_image_sqls/binaries/144/page/general_NSBH_merger.jpg?1624649953
+	" style=" 
+  color: white;
+  background-repeat:no-repeat ;
+  background-size:100% 100%;
+  background-attachment: fixed;">
+  
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/img/logo.png" alt="" style="width: 122px;"/>
+      </a>
+    </div>
+    <div class="menu-btn" id="menuBtn">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="physics.html">Physics</a></li>
+        <li><a href="blog.html">Photography</a></li>
+        <li><a href="thinking.html">Thinking</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container">
+    <h1>Physics</h1>
+
+    <h2>进行或已完成的工作</h2>
+    <ul>
+      <li class="item">
+        <!-- <img src="work0.jpg" alt="工作0"> -->
+        <div class="desc">
+          <a>黑洞微扰论及Ringdown引力波</a><br>
+          黑洞是宇宙中最不可思议的天体，史瓦西提出黑洞解后，Wheeler等人对其稳定性提出质疑，并对其微扰方程进行了研究，由此建立了黑洞微扰论。
+          黑洞微扰论与黑洞时空特征分析，黑洞周围物质分布，量子引力等问题密切相关，是我们进一步认识宇宙钥匙之一。双黑洞并合后的Ringdown阶段信号能够通过黑洞微扰论
+          描述，得益于引力波的探测，目前人类以及能够从实验的角度切入到黑洞微扰论的研究中，相关的工作正在进行中...
+          <br>文章一：<a>正在进行中...</a>
+        </div>
+      </li>
+      <li class="item">
+        <!-- <img src="work1.jpg" alt="工作1"> -->
+        <div class="desc">
+          <a href="https://zhuanlan.zhihu.com/p/654864922?utm_psn=1927290146107143699" target="_blank">引力波数据处理</a><br>
+          引力波开启了人类认识宇宙的新窗口，但是由于引力波信号非常微弱，因此需要对数据进行复杂的处理和分析。这里一系列工作都是关于引力波
+          数据处理，探测器科学运行方案，以及故障的处理。点击小标题，欢迎查看我的引力波数据处理笔记。
+          <br>文章一：<a href="https://inspirehep.net/literature/2846796" target="_blank">Effects of data gaps on 
+            ringdown signals with space-based joint observations</a>。
+          <br>文章二：<a href="http://www.bnujournal.com/cn/article/doi/10.12202/j.0476-0301.2024011" 
+          target="_blank">不等臂长条件下时间延迟干涉法的最优灵敏度曲线</a>。
+          <br>文章三：<a>撰写中...</a>。
+        </div>
+      </li>
+      <li class="item">
+        <!--<img src="work2.jpg" alt="工作2">-->
+        <div class="desc">
+          <a href="https://dxwl.bnu.edu.cn/CN/10.16854/j.cnki.1000-0712.230317" target="_blank">夸克强子相变的气泡液滴动力学</a><br>
+          夸克强子相变是高能物理最为关心的问题之一，同时对于早期宇宙相变也有关联。高能粒子对撞实验中，对撞使得强子由相变到夸克胶子等离子体（QGP），
+          碰撞结束后QGP快速冷却，重新相变成强子，这个过程能够类比水的气泡液滴相变。我们利用数值模拟方法，研究了气泡液滴的动力学行为。本工作获
+          《大学物理》杂志，“2002-2024年度优秀论文奖”。
+          <br>文章链接：<a href="https://dxwl.bnu.edu.cn/CN/10.16854/j.cnki.1000-0712.230317" target="_blank">夸克物质相变中气泡和液滴形成与演化的研究</a>。
+
+        </div>
+      </li>
+      <li class="item">
+        <!-- <img src="work3.jpg" alt="工作3"> -->
+        <div class="desc">
+          <a href="Indigo.github.io-main/index.html" target="_blank">量子力学波函数可视化</a><br>
+          基于蒙特卡洛方法，对量子力学波函数进行随机撒点和舍选，绘制出量子力学的概率云分布，有助于帮助学生理解量子力学。点击小标题，
+          欢迎查看我们的量子力学小网站。
+          <br>文章链接：<a href="https://dxwl.bnu.edu.cn/CN/10.16854%20/j.cnki.1000-0712.220612" target="_blank">三维线性谐振子量子性运动图像的可视化探究</a>。
+        </div>
+      </li>
+    </ul>
+
+    <h2>物理笔记</h2>
+    <ul>
+      <li class="item">
+        <!-- <img src="note1.jpg" alt="笔记1"> -->
+        <div class="desc">
+          <a href="https://zhuanlan.zhihu.com/p/1912245647240823794?utm_psn=1927304253766078795" target="_blank">史瓦西时空的微扰论</a><br>
+          这个笔记分上下两部分，<a href="https://zhuanlan.zhihu.com/p/1912245647240823794?utm_psn=1927304253766078795" target="_blank">上半部分传送门</a>，
+          <a href="https://www.zhihu.com/question/53877161/answer/1926745770389902517?utm_psn=1927304599951345398" target="_blank">下半部分传送门</a>。
+          <br>黑洞微扰论已经有了很长的历史，对我们认识黑洞时空有着重要的意义。
+          有两条探索时空扰动的方式，一是考虑度规系数的扰动；二是通过Newman-Penrose形式做到，两类方式能够互补。
+          笔记上半部分主要介绍了第一种方式，推导了史瓦西时空的微扰方程及此时波的散射，第二部分则介绍了Newman-Penrose形式下的微扰论，并简要分析黑洞稳定性和准正则模式。
+        </div>
+      </li>
+      <li class="item">
+        <!-- <img src="note1.jpg" alt="笔记1"> -->
+        <div class="desc">
+          <a href="https://zhuanlan.zhihu.com/p/1909730810904413214?utm_psn=1927302001970123113" target="_blank">BMS群角度的引力波记忆效应</a><br>
+          记忆效应是渐进平直时空的一个非线性特征，来自于Bondi-Sachs度规的冗余自由度。
+          BMS对称性，Weinberg软定理，记忆效应共同构成了红外三角关系。此note不涉及软定理，且主要针对引力场。
+        </div>
+      </li>
+     <li class="item">
+        <!-- <img src="note2.jpg" alt="笔记2"> -->
+        <div class="desc">
+          <a href="https://zhuanlan.zhihu.com/p/654864922?utm_psn=1927301377333363205" target="_blank">引力波数据处理基础</a><br>
+          德州大学Soumya.D.Mohanty教授主讲的引力波数据处理课程，讲授过程娓娓道来，
+          内容非常完整，很适合初步接触引力波数据处理的人学习，所以索性结合自己的理解整理成了笔记。
+          欢迎相关科研人员交流学习。
+
+        </div>
+      </li>
+     <li class="item">
+        <!-- <img src="note2.jpg" alt="笔记2"> -->
+        <div class="desc">
+          <a href="https://zhuanlan.zhihu.com/p/641659344?utm_psn=1927300993781064356" target="_blank">Peskin场论第二章小笔记</a><br>
+          这是Peskin场论第二章的笔记，主要介绍了量子场论的标量场基本概念，强调物理理解，对计算帮助较小。
+
+        </div>
+      </li>
+      <li class="item">
+        <!-- <img src="note2.jpg" alt="笔记2"> -->
+        <div class="desc">
+          <a href="https://zhuanlan.zhihu.com/p/638383417?utm_psn=1927299650634899721" target="_blank">Bayes统计简述（天文学）</a><br>
+          Bayes统计是人工智能的基石，同时也是天文学中重要的统计方法。本文结合统计学基础知识，介绍了Bayes统计的基本概念和应用，适合初学者建立快速框架。
+          还有一个相关的Fisher信息矩阵的<a href="https://mubucm.com/doc/_AQ5_Xl0Pr" target="_blank">小笔记</a>。
+
+        </div>
+      </li>
+      <li class="item">
+        <!-- <img src="note3.jpg" alt="笔记3"> -->
+        <div class="desc">
+          <a href="https://zhuanlan.zhihu.com/p/509141310?utm_psn=1927297942882092378" target="_blank">三维量子谐振子波函数推导</a><br>
+          基于薛定谔方程，在三维谐振子势下，分别在球坐标和直角坐标系下推导了三维量子谐振子波函数。
+          对涉及的Confluent Hypergeometric函数以及Hermite函数进行了详细的推导。
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // 切换菜单显示/隐藏
+    const btn = document.getElementById('menuBtn');
+    const overlay = document.getElementById('overlay');
+    btn.addEventListener('click', () => {
+      overlay.classList.toggle('active');
+    });
+    // 点击菜单项后自动关闭
+    overlay.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => overlay.classList.remove('active'));
+    });
+  </script>
+</body>
+</html>
