@@ -3,146 +3,136 @@
 <head>
   <meta charset="utf-8">
   <title>Physics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* 全局重置 */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    /* body {
-      font-family: sans-serif;
-      color: #333;
+    /* 整体背景 */
+    body {
+      margin: 0;
+      padding: 0;
       background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
-    } */
-
-
-
-    /* 顶部固定头部 */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1em;
-      background: white;
-      z-index: 10;
+      font-family: sans-serif;
+      color: #333;
     }
-    header .logo {
-      font-size: 0.8em;
-      font-weight: bold;
-    }
-    /* 三杠菜单按钮 */
-    .menu-btn {
-      width: 30px; height: 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-    .menu-btn .bar {
-      height: 4px;
-      background: #333;
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-    /* 覆盖全屏的导航层 */
-    .overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
-      transform: translateX(100%);
-      transition: transform 0.3s ease-in-out;
-      z-index: 9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .overlay.active {
-      transform: translateX(0);
-    }
-    .overlay nav ul {
-      list-style: none;
-      text-align: center;
-    }
-    .overlay nav ul li {
-      margin: 1em 0;
-    }
-    .overlay nav ul li a {
-      color: #fff;
-      font-size: 2em;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .overlay nav ul li a:hover {
-      color: #f0a;
-    }
-    /* 主内容容器，留出头部空间 */
+    /* 内容容器，半透明背景方便阅读 */
     .container {
-      padding: 80px 1em 2em;
       max-width: 800px;
       margin: 0 auto;
-      background: transparent;
+      padding: 2em;
+      background: rgba(255, 255, 255, 0.85);
     }
-    h1 { font-size: 3em; text-align: center; margin-bottom: 0.5em; }
+    /* 大标题 */
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+    /* 小标题 */
     h2 {
       font-size: 2em;
-      margin-top: 1.5em; margin-bottom: 0.5em;
-      border-bottom: 2px solid #fff; padding-bottom: 0.2em;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.2em;
     }
-    ul { list-style: none; }
+    /* 列表样式 */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
     li.item {
-      display: flex; align-items: center;
+      display: flex;
+      align-items: center;
       margin-bottom: 1em;
     }
+    /* 缩略图 */
     li.item img {
-      width: 80px; height: 80px;
+      width: 80px;
+      height: 80px;
       object-fit: cover;
       margin-right: 1em;
       border-radius: 4px;
       border: 1px solid #ddd;
     }
-    .desc a {
-      font-weight: bold; color: #2b82da;
+    /* 链接和描述 */
+    .item .desc {
+      line-height: 1.4;
+    }
+    .item .desc a {
+      font-weight: bold;
+      color: #0066cc;
       text-decoration: none;
     }
-    .desc a:hover { text-decoration: underline; }
+    .item .desc a:hover {
+      text-decoration: underline;
+    }
   </style>
+  <script>
+    // 这里可以添加交互脚本，比如点击图片放大等
+    document.addEventListener('DOMContentLoaded', function() {
+      // 示例：所有项目点击时高亮
+      document.querySelectorAll('.item').forEach(function(el) {
+        el.addEventListener('click', function() {
+          this.style.background = 'rgba(0, 102, 204, 0.1)';
+        });
+      });
+    });
+  </script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- Fonts-->
+		<link rel="stylesheet" type="text/css" href="assets/fonts/fontawesome/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/fonts/pe-icon/pe-icon.css">
+		<!-- Vendors-->
+		<link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap/grid.css">
+		<link rel="stylesheet" type="text/css" href="assets/vendors/magnific-popup/magnific-popup.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/vendors/swiper/swiper.css">
+		<!-- App & fonts-->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:400,700">
+		<link rel="stylesheet" type="text/css" id="app-stylesheet" href="assets/css/main.css"><!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<![endif]-->
+
 </head>
-<body     background="	https://www.ligo.caltech.edu/system/avm_image_sqls/binaries/144/page/general_NSBH_merger.jpg?1624649953
-	" style=" 
-  color: white;
-  background-repeat:no-repeat ;
-  background-size:100% 100%;
-  background-attachment: fixed;">
-  
-  <header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="assets/img/logo.png" alt="" style="width: 122px;"/>
-      </a>
-    </div>
-    <div class="menu-btn" id="menuBtn">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-  </header>
-
-  <div class="overlay" id="overlay">
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="physics.html">Physics</a></li>
-        <li><a href="blog.html">Photography</a></li>
-        <li><a href="thinking.html">Thinking</a></li>
-      </ul>
-    </nav>
-  </div>
-
+<body>
   <div class="container">
+    <header class="header header--fixed">
+				<div class="header__inner">
+					<div class="header__logo"><a href="index.html"><img src="assets/img/logo.png" alt="" style="width: 122px;"/></a></div>
+					<div class="navbar-toggle" id="fs-button">
+						<div class="navbar-icon"><span></span></div>
+					</div>
+				</div>
+				
+				<!-- fullscreenmenu__module -->
+				<div class="fullscreenmenu__module" trigger="#fs-button">
+					
+					<!-- overlay-menu -->
+					<nav class="overlay-menu">
+						
+						<!--  -->
+						<ul class="wil-menu-list">
+							<li><a href="index.html">Home</a>
+							</li>
+							<li><a href="about.html">About</a>
+							</li>
+							<li class="current-menu-item"><a href="work.html">Physics</a>
+							</li>
+							<li><a href="blog.html">photography</a>
+							</li>
+							<li><a href="thinking.html">Thinking</a>
+							</li>
+
+						</ul><!--  -->
+						
+					</nav><!-- End / overlay-menu -->
+					
+				</div><!-- End / fullscreenmenu__module -->
+				
+			</header><!-- End / header -->
+
+      
     <h1>Physics</h1>
 
     <h2>进行或已完成的工作</h2>
@@ -150,7 +140,7 @@
       <li class="item">
         <!-- <img src="work0.jpg" alt="工作0"> -->
         <div class="desc">
-          <a>黑洞微扰论及Ringdown引力波</a><br>
+          <a href="https://zhuanlan.zhihu.com/p/654864922?utm_psn=1927290146107143699" target="_blank">黑洞微扰论及Ringdown引力波</a><br>
           黑洞是宇宙中最不可思议的天体，史瓦西提出黑洞解后，Wheeler等人对其稳定性提出质疑，并对其微扰方程进行了研究，由此建立了黑洞微扰论。
           黑洞微扰论与黑洞时空特征分析，黑洞周围物质分布，量子引力等问题密切相关，是我们进一步认识宇宙钥匙之一。双黑洞并合后的Ringdown阶段信号能够通过黑洞微扰论
           描述，得益于引力波的探测，目前人类以及能够从实验的角度切入到黑洞微扰论的研究中，相关的工作正在进行中...
@@ -250,18 +240,5 @@
       </li>
     </ul>
   </div>
-
-  <script>
-    // 切换菜单显示/隐藏
-    const btn = document.getElementById('menuBtn');
-    const overlay = document.getElementById('overlay');
-    btn.addEventListener('click', () => {
-      overlay.classList.toggle('active');
-    });
-    // 点击菜单项后自动关闭
-    overlay.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => overlay.classList.remove('active'));
-    });
-  </script>
 </body>
 </html>
